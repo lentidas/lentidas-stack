@@ -1,19 +1,19 @@
 data "github_repository_file" "chart_definition" {
-  repository = "lentidas/helm-cluster-addon-argo-cd"
+  repository = "lentidas/helm-cluster-addons"
   branch     = var.repository_version
-  file       = "Chart.yaml"
+  file       = "argo-cd/Chart.yaml"
 }
 
 data "github_repository_file" "values_common" {
-  repository = "lentidas/helm-cluster-addon-argo-cd"
+  repository = "lentidas/helm-cluster-addons"
   branch     = var.repository_version
-  file       = "values-common.yaml"
+  file       = "argo-cd/values-common.yaml"
 }
 
 data "github_repository_file" "values_bootstrap" {
-  repository = "lentidas/helm-cluster-addon-argo-cd"
+  repository = "lentidas/helm-cluster-addons"
   branch     = var.repository_version
-  file       = "values-bootstrap.yaml"
+  file       = "argo-cd/values-bootstrap.yaml"
 }
 
 data "utils_deep_merge_yaml" "values" {
