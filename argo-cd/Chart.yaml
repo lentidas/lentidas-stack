@@ -1,0 +1,8 @@
+apiVersion: v2
+name: Argo CD
+version: "0" # TODO Maybe add a version and update it automatically using the semantic-release plugin
+description: TODO # TODO Add a description
+dependencies:
+- name: argo-cd
+  repository: https://argoproj.github.io/argo-helm
+  version: 7.0.0
