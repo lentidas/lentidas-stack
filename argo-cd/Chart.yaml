@@ -5,4 +5,4 @@ description: TODO # TODO Add a description
 dependencies:
 - name: argo-cd
   repository: https://argoproj.github.io/argo-helm
-  version: 7.0.0
+  version: 7.6.12
