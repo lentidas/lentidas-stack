@@ -15,3 +15,4 @@ A Terraform module to deploy a Kubernetes cluster on Exoscale using the Exoscale
 - [ ] Add pipeline to add documentation to this README.md
 - [ ] Add pipeline to publish new release using the `semantic-release` tool
 - [ ] Investigate if the use of Private Networks is useful
+- [ ] Test if it possible to create multiple load balancers, one for accessing internal services and another for public services
