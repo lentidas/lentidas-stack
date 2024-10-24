@@ -1,0 +1,8 @@
+apiVersion: v2
+name: cert-manager
+version: "0" # TODO Maybe add a version and update it automatically using the semantic-release plugin
+description: TODO # TODO Add a description
+dependencies:
+- name: cert-manager
+  repository: https://charts.jetstack.io
+  version: 1.16.1

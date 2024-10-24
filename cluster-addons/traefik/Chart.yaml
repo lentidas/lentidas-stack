@@ -1,0 +1,8 @@
+apiVersion: v2
+name: Traefik
+version: "0" # TODO Maybe add a version and update it automatically using the semantic-release plugin
+description: TODO # TODO Add a description
+dependencies:
+- name: traefik
+  repository: https://helm.traefik.io/traefik
+  version: 32.1.1

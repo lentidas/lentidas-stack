@@ -1,0 +1,8 @@
+apiVersion: v2
+name: External Secrets Operator
+version: "0" # TODO Maybe add a version and update it automatically using the semantic-release plugin
+description: TODO # TODO Add a description
+dependencies:
+- name: external-secrets
+  repository: https://charts.external-secrets.io
+  version: 0.10.4
