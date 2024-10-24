@@ -1,19 +1,19 @@
 data "github_repository_file" "chart_definition" {
-  repository = "lentidas/helm-cluster-addons"
+  repository = local.repository
   branch     = var.repository_version
-  file       = "argo-cd/Chart.yaml"
+  file       = "${local.chart_path}/Chart.yaml"
 }
 
 data "github_repository_file" "values_common" {
-  repository = "lentidas/helm-cluster-addons"
+  repository = local.repository
   branch     = var.repository_version
-  file       = "argo-cd/values-common.yaml"
+  file       = "${local.chart_path}/values-common.yaml"
 }
 
 data "github_repository_file" "values_bootstrap" {
-  repository = "lentidas/helm-cluster-addons"
+  repository = local.repository
   branch     = var.repository_version
-  file       = "argo-cd/values-bootstrap.yaml"
+  file       = "${local.chart_path}/values-bootstrap.yaml"
 }
 
 data "utils_deep_merge_yaml" "values" {
@@ -36,6 +36,7 @@ resource "helm_release" "argo_cd_bootstrap" {
   values           = [data.utils_deep_merge_yaml.values.output]
 
   lifecycle {
+    # Ignore all changes after the bootstrap, since the Argo CD application will manage itself later on.
     ignore_changes = all
   }
 }
