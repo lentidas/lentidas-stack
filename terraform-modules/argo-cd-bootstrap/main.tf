@@ -33,7 +33,8 @@ resource "helm_release" "argo_cd_bootstrap" {
 
   namespace        = "argo-cd"
   create_namespace = true
-  values           = [data.utils_deep_merge_yaml.values.output]
+  # FIXME Find a better way to get only the values inside the `argo-cd` key.
+  values = [yamlencode(yamldecode(data.utils_deep_merge_yaml.values.output).argo-cd)]
 
   lifecycle {
     # Ignore all changes after the bootstrap, since the Argo CD application will manage itself later on.
